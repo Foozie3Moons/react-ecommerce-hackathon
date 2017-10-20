@@ -5,7 +5,7 @@ class ApprovedList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      items: ['approved', 'list']
+      items: []
     }
   }
 
@@ -19,7 +19,14 @@ class ApprovedList extends Component {
         <h3>ApprovedList</h3>
         <ul>
           {this.state.items.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>
+              <div className='card'>
+                {item.name}
+                <img className='thumb-list' src={item.imgUrl} />
+                {item.url}
+                {item.price}
+              </div>
+            </li>
           ))}
         </ul>
       </div>

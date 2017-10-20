@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar brand='logo' right>
+        <Navbar brand='costuME' right>
           <NavItem href='#'>Approved Costumes</NavItem>
           <NavItem href='#'>Rejected Costumes</NavItem>
         </Navbar>

@@ -27,7 +27,19 @@
   to { transform: rotate(360deg); }
 }
 
-.thumb {
+.thumb-main {
   max-width: 300px;
   max-height: 300px;
+}
+
+.thumb-list {
+  height: 100px;
+}
+
+.card {
+  padding: 1em;
+}
+
+Body {
+  background-color: rgba(0,0,0,.1);
 }

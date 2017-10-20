@@ -32,10 +32,14 @@ class Main extends Component {
 
   render() {
     return(
-      <div>
-        <Selection selectedItem={this.state.selectedItem} handleRejection={this.props.handleRejection} handleApproval={this.props.handleApproval}/>
-        <ComparisonList comparisonList={this.props.comparisonList}/>
-      </div>
+      <Row>
+        <Col s={8}>
+          <Selection selectedItem={this.state.selectedItem} handleRejection={this.props.handleRejection} handleApproval={this.props.handleApproval}/>
+        </Col>
+        <Col s={4}>
+          <ComparisonList comparisonList={this.props.comparisonList}/>
+        </Col>
+      </Row>
     )
   }
 }
