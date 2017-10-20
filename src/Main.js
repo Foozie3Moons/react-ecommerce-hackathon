@@ -21,7 +21,7 @@ class Main extends Component {
   render() {
     return(
       <div>
-        <Selection handleSearch={'farge'}/>
+        <Selection />
         <ComparisonList />
       </div>
     )
