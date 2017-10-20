@@ -1,42 +1,22 @@
 import React, { Component } from 'react';
-import SelectionItem from './SelectionItem';
+// import SelectionItem from './Selection';
+import { Button, Row, Col } from 'react-materialize';
 
-class Selection extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      items: [], // items received from the API fetch
-      selectedItem: {}, // the current item being displayed, shifted from the front of the items array
-    }
-  }
-
-  handleSearch = () => {
-    /* API fetch goes here
-     * Once JSON is received, we need the following pieces of data (if possible):
-     * item: {
-     *   name: 'Batman Costume', // some sort of name we can display as a title
-     *   imgUrl: 'https://google.com/img.png', // link to the image so we can display it
-     *   webUrl: 'https://google.com', // link to the place where we can see the posting
-     *   cost: '$29.99' // Some sort of
-     * }
-     * Afterwards, we need to shuffle the item array. Unshift the first item into a variable.
-     */
-  }
-
-
-
-
-  render() {
+const Selection = (props) => {
     return(
-      <div>
-        {/* Materialize X Button Icon */}
-        <SelectionItem
-          name={this.state.selectedItem.name}
-          imgUrl={this.state.selectedItem.imgUrl}
-          handleSelection={this.props.handleSelection}
-        />
-        {/* Materialize ✓ Button Icon */}
-      </div>
+      <Row className='card'>{/* Materialize Card Component? */}
+        <Col s={2}>
+          <Button floating large className='red' waves='light' icon='clear' onClick={this.handleRejection(this.props.selectedItem)} />
+        </Col>
+        <Col s={8}>
+          <h2>{this.props.selectedItem.name}</h2>
+          <img className='thumb' src={this.props.selectedItem.imgUrl} />
+          <a href={this.props.selectedItem.webUrl}><h4>Website</h4></a>
+        </Col>
+        <Col s={2}>
+          <Button floating large className='green' waves='light' icon='check' onClick={this.handleApproval(this.props.selectedItem)} />
+        </Col>
+      </Row>
     )
   }
 }

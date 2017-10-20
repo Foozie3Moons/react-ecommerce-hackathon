@@ -26,3 +26,8 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.thumb {
+  max-width: 300px;
+  max-height: 300px;
+}

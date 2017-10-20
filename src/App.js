@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './Navbar';
 import Body from './Body';
-
+import { Navbar, NavItem } from 'react-materialize';
 class App extends Component {
+
+  // site routing here
+
   render() {
     return (
-      <div className="App">
+      <div>
+        <Navbar brand='logo' right>
+          <NavItem href='#'>Approved Costumes</NavItem>
+          <NavItem href='#'>Rejected Costumes</NavItem>
+        </Navbar>
+        <Body />
       </div>
     );
   }
