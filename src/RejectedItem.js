@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class RejectedItem extends Constructor {
+class RejectedItem extends Component {
   constructor(props) {
     super(props)
     this.state = {

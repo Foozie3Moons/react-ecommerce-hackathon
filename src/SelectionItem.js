@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class SelectionItem extends Constructor {
+class SelectionItem extends Component {
   constructor(props) {
     super(props)
     this.state = {

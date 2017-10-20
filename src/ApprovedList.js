@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ApprovedList from './ApprovedList';
+import ApprovedItem from './ApprovedItem';
 
-class ApprovedList extends Constructor {
+class ApprovedList extends Component {
   constructor(props) {
     super(props)
     this.state = {

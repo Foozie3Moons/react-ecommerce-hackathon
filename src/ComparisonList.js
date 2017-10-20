@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ComparisonItem from './ComparisonItem';
 
-class ComparisonList extends Constructor {
+class ComparisonList extends Component {
   constructor(props) {
     super(props)
     this.state = {

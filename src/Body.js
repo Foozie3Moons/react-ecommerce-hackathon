@@ -3,7 +3,7 @@ import Main from './Main';
 import ApprovedList from './ApprovedList';
 import RejectedList from './RejectedList';
 
-class Body extends Constructor {
+class Body extends Component {
   constructor(props) {
     super(props)
     this.state = {

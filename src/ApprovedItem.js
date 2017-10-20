@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ApprovedItem extends Constructor {
+class ApprovedItem extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -11,7 +11,7 @@ class ApprovedItem extends Constructor {
   render() {
     return(
       <div>
-        
+
       </div>
     )
   }

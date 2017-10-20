@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import RejectedItem from './RejectedItem';
 
-class RejectedList extends Constructor {
+class RejectedList extends Component {
   constructor(props) {
     super(props)
     this.state = {
