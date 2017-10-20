@@ -1,14 +1,17 @@
+/* global gapi */
 import React, { Component } from 'react';
 import Selection from './Selection';
 import ComparisonList from './ComparisonList';
 import $ from 'jquery'
 import { Col, Row } from 'react-materialize';
+const API_KEY = 'AIzaSyCHwZfPR6JXY7uR6Sc5dNmdDQAlIUDB-fU'
 
 
 class Main extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      gapiReady: true,
       query: '',
       items: ['selection', 'list'], // items received from the API fetch
       selectedItem: {
@@ -19,12 +22,27 @@ class Main extends Component {
       }, // the current item being displayed, shifted from the front of the items array
     }
   }
+  //NOTE: THIS MAY NOT BE NECESSARY IF I CAN GET THE GOOGLE CLIENT TO WORK IN INDEX.HTML
+  //BEFORE I CAN USE THE API I HAVE TO SET UP THE CLIENT 
+  loadSearchApi() {
+    const script = document.createElement('script');
+    script.src = "https://apis.google.com/js/client.js";
 
-  componentDidMount() {
-    console.log('this works')
+  
+    script.onload = () => {
+      gapi.load('client', () => {
+        gapi.client.setApiKey(API_KEY);
+        gapi.client.load('search.cse', 'v1', () => {
+          this.setState({ gapiReady: true });
+        });
+      });
+    };
+
+    document.body.appendChild(script);
   }
 
-  handleSearch = () => {
+
+  somethinghere() {
     // API fetch goes here
     // Once JSON is received, we need the following pieces of data (if possible):
     // item: {
@@ -35,8 +53,8 @@ class Main extends Component {
     // }
     // Afterwards, we need to shuffle the item array. Unshift the first item into a variable.
     // Save the unshifted item in selectedItem. Save the rest of the item array in items
-    let query;
-    let source = 'https://www.googleapis.com/customsearch/v1?q=dog&cx=000090820098513226617%3Azdwpc4qbevo&searchType=image&key=AIzaSyCHwZfPR6JXY7uR6Sc5dNmdDQAlIUDB-fU'
+    let query = this.state.query
+    let source = 'https://www.googleapis.com/customsearch/v1?q=dog&cx=000090820098513226617%3Azdwpc4qbevo&searchType=image&key=' + API_KEY;
     fetch(source)
       .then(response => response.json())
       .then(response => this.setState({
@@ -44,14 +62,31 @@ class Main extends Component {
       }))
   }
 
+  searchChange(e) {
+    this.setState({
+      query: e.target.value
+    })
+  }
+
+  componentDidMount() {
+    this.loadSearchApi()
+  }
+
   render() {
+    if (this.state.gapiReady) {
     return(
-      <div>
-        <input name='searchbox' id='search' type='text'/>
-        <Selection selectedItem={this.state.selectedItem} handleRejection={this.props.handleRejection} handleApproval={this.props.handleApproval}/>
-        <ComparisonList comparisonList={this.props.comparisonList}/>
-      </div>
+      <Row>
+        <input type='text' placeholder='Search' name='searchbox' id='searchbox' onChange={ (e) => this.searchChange(e) } />
+        <input type='button' value='Search'/>
+        <Col s={8}>
+          <Selection selectedItem={this.state.selectedItem} handleRejection={this.props.handleRejection} handleApproval={this.props.handleApproval}/>
+        </Col>
+        <Col s={4}>
+          <ComparisonList comparisonList={this.props.comparisonList}/>
+        </Col>
+      </Row>
     )
+    }
   }
 }
 

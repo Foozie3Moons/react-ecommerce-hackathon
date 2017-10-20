@@ -7,7 +7,7 @@ class Body extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      approvedItems: [1,2,3,4],
+      approvedItems: [],
       rejectedItems: [],
     }
   }
@@ -18,11 +18,15 @@ class Body extends Component {
   // For that reason, state-lifting functions should live here, and be passed through Main to the Selection itself
 
   handleApproval = (item) => {
-    this.setState({approvedItem: item})
+    let items = this.state.approvedItems;
+    items.push(item);
+    this.setState({approvedItems: items})
   }
 
   handleRejection = (item) => {
-    this.setState({rejectedItem: item})
+    let items = this.state.rejectedItems;
+    items.push(item);
+    this.setState({rejectedItems: items});
   }
 
   getComparisonList = () => {
