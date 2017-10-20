@@ -1,20 +1,11 @@
 import React, { Component } from 'react';
 
-class Navbar extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      // Default State
-    }
-  }
-
-  render() {
-    return(
-      <div>
-
-      </div>
-    )
-  }
+const Navbar = (props) => {
+  return(
+    <nav>
+      {/* Materialize Navbar Here */}
+    </nav>
+  )
 }
 
 export default Navbar;

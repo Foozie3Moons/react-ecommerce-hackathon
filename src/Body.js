@@ -11,10 +11,17 @@ class Body extends Component {
     }
   }
 
+  // Body will be sending data around to the various components.
+  // When a selection is made, state is lifted all the way up to here.
+  // The props are then sent to Approved/Rejected lists, rerendering if needed
+  // For that reason, state-lifting functions should live here, and be passed through Main to the Selection itself
+
   render() {
     return(
-      <div>
-
+      <div className='Body'>
+        <Main />
+        <ApprovedList />
+        <RejectedList />
       </div>
     )
   }

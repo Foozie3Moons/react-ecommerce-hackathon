@@ -4,9 +4,14 @@ import Navbar from './Navbar';
 import Body from './Body';
 
 class App extends Component {
+
+  // site routing here
+
   render() {
     return (
-      <div className="App">
+      <div>
+        <Navbar />
+        <Body />
       </div>
     );
   }
