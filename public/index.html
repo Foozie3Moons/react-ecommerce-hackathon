@@ -39,8 +39,27 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+    function start() {
+      // 2. Initialize the JavaScript client library.
+      gapi.client.init({
+        'apiKey': 'AIzaSyCHwZfPR6JXY7uR6Sc5dNmdDQAlIUDB-fU',
+      }).then(function() {
+        // 3. Initialize and make the API request.
+        return gapi.client.request({
+          'path': 'https://www.googleapis.com/customsearch/v1?parameters',
+        })
+      }).then(function(response) {
+        console.log(response.result);
+      }, function(reason) {
+        console.log('Error: ' + reason.result.error.message);
+      });
+    };
+    // 1. Load the JavaScript client library.
+    gapi.load('client', start);
+</script>
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src="path/to/your/bundle.js"></script>
   </body>
 </html>

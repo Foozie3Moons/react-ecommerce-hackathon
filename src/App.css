@@ -32,6 +32,10 @@
   max-height: 500px;
 }
 
+
+#search {
+  width: 75%;
+}
 .thumb-list {
   height: 100px;
 }
