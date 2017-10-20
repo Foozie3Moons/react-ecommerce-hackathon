@@ -5,7 +5,7 @@ class ApprovedList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      items: []
+      items: ['approved', 'list']
     }
   }
 

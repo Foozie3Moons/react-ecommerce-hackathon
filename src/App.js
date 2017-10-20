@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from './Navbar';
 import Body from './Body';
-
+import { Navbar, NavItem } from 'react-materialize';
 class App extends Component {
 
   // site routing here
@@ -10,7 +9,10 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar />
+        <Navbar brand='logo' right>
+          <NavItem href='#'>Approved Costumes</NavItem>
+          <NavItem href='#'>Rejected Costumes</NavItem>
+        </Navbar>
         <Body />
       </div>
     );

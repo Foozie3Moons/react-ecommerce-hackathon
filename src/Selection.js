@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 // import SelectionItem from './Selection';
+import { Button, Card, Grid, Col } from 'react-materialize';
 
 class Selection extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      items: [], // items received from the API fetch
+      items: ['selection', 'list'], // items received from the API fetch
       selectedItem: {}, // the current item being displayed, shifted from the front of the items array
     }
   }

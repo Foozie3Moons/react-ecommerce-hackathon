@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 // import RejectedItem from './RejectedItem';
+import { Table } from 'react-materialize';
 
 class RejectedList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      items: [],
+      items: ['rejection', 'list'],
     }
   }
 
