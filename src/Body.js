@@ -7,7 +7,7 @@ class Body extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      approvedItems: [],
+      approvedItems: [1,2,3,4],
       rejectedItems: [],
     }
   }
@@ -26,10 +26,7 @@ class Body extends Component {
   }
 
   getComparisonList = () => {
-    var list = []
-    for (let i = 1;  i < this.state.approvedItems.length; i++) {
-      list += this.state.approvedItems[this.state.approvedItems.length - 1];
-    }
+
     return list;
   }
 
