@@ -15,16 +15,22 @@ class ApprovedList extends Component {
 
   render() {
     return(
-      <div>
-        <h3>ApprovedList</h3>
-        <ul>
+      <div className='card'>
+        <h3 id='approved-list'>ApprovedList</h3>
+        <ul className='list-inline'>
           {this.state.items.map((item, index) => (
             <li key={index}>
-              <div className='card'>
-                {item.name}
-                <img className='thumb-list' src={item.imgUrl} />
-                {item.url}
-                {item.price}
+              <div className='card card-item'>
+                <ul className='list-inline'>
+                  <li><a href={item.webUrl}><img className='thumb-list' src={item.imgUrl} /></a></li>
+                  <li>
+                    <ul>
+                      <li>{item.name}</li>
+                      <li><a href={item.webUrl}>Website</a></li>
+                      <li>{item.cost}</li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </li>
           ))}

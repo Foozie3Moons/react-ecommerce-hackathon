@@ -9,9 +9,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar brand='costuME' right>
-          <NavItem href='#'>Approved Costumes</NavItem>
-          <NavItem href='#'>Rejected Costumes</NavItem>
+        <Navbar fixed='true' className='purple darken-4' brand='costuME' right>
+          <NavItem href='#approved-list'>Approved Costumes</NavItem>
+          <NavItem href='#rejected-list'>Rejected Costumes</NavItem>
         </Navbar>
         <Body />
       </div>

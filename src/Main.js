@@ -76,14 +76,21 @@ class Main extends Component {
     if (this.state.gapiReady) {
     return(
       <Row>
-        <input type='text' placeholder='Search' name='searchbox' id='searchbox' onChange={ (e) => this.searchChange(e) } />
-        <input type='button' value='Search'/>
-        <Col s={8}>
-          <Selection selectedItem={this.state.selectedItem} handleRejection={this.props.handleRejection} handleApproval={this.props.handleApproval}/>
-        </Col>
-        <Col s={4}>
-          <ComparisonList comparisonList={this.props.comparisonList}/>
-        </Col>
+        <Row>
+          <input type='text' placeholder='Search' name='searchbox' id='searchbox' onChange={ (e) => this.searchChange(e) } />
+          <input type='button' value='Search'/>
+        </Row>
+        <Row>
+          <Col s={1}></Col>
+          <Col s={6} className='Selection'>
+            <Selection selectedItem={this.state.selectedItem} handleRejection={this.props.handleRejection} handleApproval={this.props.handleApproval}/>
+          </Col>
+          <Col s={1}></Col>
+          <Col s={3}>
+            <ComparisonList comparisonList={this.props.comparisonList}/>
+          </Col>
+          <Col s={1}></Col>
+        </Row>
       </Row>
     )
     }
