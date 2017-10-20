@@ -38,6 +38,7 @@
 
 .card {
   padding: 1em;
+  opacity: .1;
 }
 
 Body {
