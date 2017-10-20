@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Selection from './Selection';
 import ComparisonList from './ComparisonList';
+import { Col, Row } from 'react-materialize';
 
 class Main extends Component {
   constructor(props) {
@@ -14,10 +15,6 @@ class Main extends Component {
           cost: '$29.99' // Some sort of dollar information to display
       }, // the current item being displayed, shifted from the front of the items array
     }
-  }
-
-  componentDidMount = () => {
-
   }
 
   handleSearch = () => {
@@ -36,7 +33,7 @@ class Main extends Component {
   render() {
     return(
       <div>
-        <Selection selectedItem={this.state.selectedItem} handleRejectio={this.props.handleRejection} handleApproval={this.props.handleApproval}/>
+        <Selection selectedItem={this.state.selectedItem} handleRejection={this.props.handleRejection} handleApproval={this.props.handleApproval}/>
         <ComparisonList comparisonList={this.props.comparisonList}/>
       </div>
     )

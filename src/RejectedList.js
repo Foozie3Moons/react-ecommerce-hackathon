@@ -11,12 +11,13 @@ class RejectedList extends Component {
   }
 
   componentWillReceiveProps = (nextProps) => {
-    // this.setState({items: nextProps.items});
+    this.setState({items: nextProps.items});
   }
 
   render() {
     return(
       <div>
+        <h3>RejectedList</h3>
         <ul>
           {this.state.items.map((item, index) => (
             <li key={index}>{item}</li>
