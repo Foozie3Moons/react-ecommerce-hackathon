@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 // import SelectionItem from './Selection';
 import { Button, Row, Col } from 'react-materialize';
 
-<<<<<<< HEAD
-const Selection = (props) => {
-    return (
-      null
-=======
 class Selection extends Component {
   constructor(props) {
     super(props);
@@ -52,8 +47,8 @@ class Selection extends Component {
           </ul>
         </Col>
       </Row>
->>>>>>> 29fca6bebab749d8146428e620e897d277c9b37a
     )
+  }
 }
 
 

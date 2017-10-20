@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import Selection from './Selection';
 import ComparisonList from './ComparisonList';
-<<<<<<< HEAD
 import $ from 'jquery'
-=======
 import { Col, Row } from 'react-materialize';
->>>>>>> 29fca6bebab749d8146428e620e897d277c9b37a
+
 
 class Main extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      query: '',
       items: ['selection', 'list'], // items received from the API fetch
       selectedItem: {
           name: 'Batman Costume', // some sort of name we can display as a title
@@ -19,6 +18,10 @@ class Main extends Component {
           cost: '$29.99' // Some sort of dollar information to display
       }, // the current item being displayed, shifted from the front of the items array
     }
+  }
+
+  componentDidMount() {
+    console.log('this works')
   }
 
   handleSearch = () => {
@@ -32,11 +35,19 @@ class Main extends Component {
     // }
     // Afterwards, we need to shuffle the item array. Unshift the first item into a variable.
     // Save the unshifted item in selectedItem. Save the rest of the item array in items
+    let query;
+    let source = 'https://www.googleapis.com/customsearch/v1?q=dog&cx=000090820098513226617%3Azdwpc4qbevo&searchType=image&key=AIzaSyCHwZfPR6JXY7uR6Sc5dNmdDQAlIUDB-fU'
+    fetch(source)
+      .then(response => response.json())
+      .then(response => this.setState({
+
+      }))
   }
 
   render() {
     return(
       <div>
+        <input name='searchbox' id='search' type='text'/>
         <Selection selectedItem={this.state.selectedItem} handleRejection={this.props.handleRejection} handleApproval={this.props.handleApproval}/>
         <ComparisonList comparisonList={this.props.comparisonList}/>
       </div>

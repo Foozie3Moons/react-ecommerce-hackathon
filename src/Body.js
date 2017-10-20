@@ -18,15 +18,18 @@ class Body extends Component {
   // For that reason, state-lifting functions should live here, and be passed through Main to the Selection itself
 
   handleApproval = (item) => {
-    this.setState({approvedItems: item})
+    this.setState({approvedItem: item})
   }
 
   handleRejection = (item) => {
-    this.setState({rejectedItems: item})
+    this.setState({rejectedItem: item})
   }
 
   getComparisonList = () => {
-
+    var list = [];
+    for (let i = 1; i < this.state.approvedItems.length; i++) {
+      list += this.state.approvedItems[this.state.approvedItems.length - 1];
+    }
     return list;
   }
 
