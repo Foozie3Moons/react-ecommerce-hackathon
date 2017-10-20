@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import Main from './Main';
 import ApprovedList from './ApprovedList';
 import RejectedList from './RejectedList';
+import { Row } from 'react-materialize';
 
 class Body extends Component {
   constructor(props) {
     super(props)
     this.state = {
       approvedItems: [],
+      comparisonList: [],
       rejectedItems: [],
     }
   }
@@ -20,7 +22,9 @@ class Body extends Component {
   handleApproval = (item) => {
     let items = this.state.approvedItems;
     items.push(item);
-    this.setState({approvedItems: items})
+    let list = this.getComparisonList(items)
+
+    this.setState({approvedItems: items, comparisonList: list});
   }
 
   handleRejection = (item) => {
@@ -29,21 +33,34 @@ class Body extends Component {
     this.setState({rejectedItems: items});
   }
 
-  getComparisonList = () => {
+  getComparisonList = (items) => {
     var list = [];
-    for (let i = 1; i < this.state.approvedItems.length; i++) {
-      list += this.state.approvedItems[this.state.approvedItems.length - 1];
+    if (items.length === 0) {
+      return list;
     }
-    return list;
+    else if (items.length > 4) {
+      let i = 1;
+      while (list.length < 4) {
+        list.push(items[items.length - i])
+        i++;
+      }
+    } else {
+      for (let i = 1; i < items.length + 1; i++) {
+        console.log(list);
+        list.push(items[items.length - i]);
+      }
+    }
+    return list
   }
 
   render() {
     return(
       <div className='Body'>
+        <Row></Row>
         <Main
           handleApproval={this.handleApproval}
           handleRejection={this.handleRejection}
-          comparisonList={this.getComparisonList}
+          comparisonList={this.state.comparisonList}
           />
         <ApprovedList items={this.state.approvedItems} />
         <RejectedList items={this.state.rejectedItems} />

@@ -5,12 +5,12 @@ class ComparisonList extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      items: ['comparison', 'list']
+      items: []
     }
   }
 
   componentWillReceiveProps = (nextProps) => {
-    // this.setState({items: nextProps.items});
+    this.setState({items: nextProps.comparisonList});
   }
 
   render() {
@@ -18,7 +18,20 @@ class ComparisonList extends Component {
       <div>
         <ul>
           {this.state.items.map((item, index) => (
-            <li key={index}>{item}</li>
+            <li key={index}>
+              <div className='card'>
+                <ul className='list-inline'>
+                  <li><a href={item.webUrl}><img className='thumb-list' src={item.imgUrl} /></a></li>
+                  <li>
+                    <ul>
+                      <li>{item.name}</li>
+                      <li><a href={item.webUrl}>Website</a></li>
+                      <li>{item.cost}</li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </li>
           ))}
         </ul>
       </div>
