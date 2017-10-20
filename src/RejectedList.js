@@ -16,12 +16,12 @@ class RejectedList extends Component {
 
   render() {
     return(
-      <div className='card'>
-        <h3 id='rejected-list'>RejectedList</h3>
+      <div className='card card-board'>
+        <h3 id='rejected-list'>Na, Man.</h3>
         <ul className='list-inline'>
           {this.state.items.map((item, index) => (
             <li key={index}>
-              <div className='card'>
+              <div className='card card-item'>
                 <ul className='list-inline'>
                   <li><a href={item.webUrl}><img className='thumb-list' src={item.imgUrl} /></a></li>
                   <li>

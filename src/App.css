@@ -28,8 +28,7 @@
 }
 
 .thumb-main {
-  max-width: 400px;
-  max-height: 500px;
+  height: 300px;
 }
 
 
@@ -42,7 +41,6 @@
 
 .card {
   padding: 1em;
-  opacity: .1;
 }
 
 Body {
@@ -69,5 +67,25 @@ Body {
 }
 
 .card-item {
+  background: rgba(255,255,255,1)
+}
+
+.card-board {
+  background:rgba(255,255,255,.95);
+}
+
+.card-item-list {
   width: 300px;
+}
+
+.card-selector {
+  height: 545px;
+}
+
+.margin-right {
+  margin-right:
+}
+
+.logo {
+  margin-left: 1em;
 }

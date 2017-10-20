@@ -19,11 +19,11 @@ class ComparisonList extends Component {
         <ul>
           {this.state.items.map((item, index) => (
             <li key={index}>
-              <div className='card'>
+              <div className='card card-item'>
                 <ul className='list-inline'>
                   <li><a href={item.webUrl}><img className='thumb-list' src={item.imgUrl} /></a></li>
                   <li>
-                    <ul>
+                    <ul className='float-right'>
                       <li>{item.name}</li>
                       <li><a href={item.webUrl}>Website</a></li>
                       <li>{item.cost}</li>

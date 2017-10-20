@@ -15,8 +15,8 @@ class ApprovedList extends Component {
 
   render() {
     return(
-      <div className='card'>
-        <h3 id='approved-list'>ApprovedList</h3>
+      <div className='card card-board'>
+        <h3 id='approved-list'>Yea, Buddy!</h3>
         <ul className='list-inline'>
           {this.state.items.map((item, index) => (
             <li key={index}>

@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Navbar fixed='true' className='purple darken-4' brand='costuME' right>
+        <Navbar fixed='true' className='purple darken-4' brand=" 🎃 costuME" right>
           <NavItem href='#approved-list'>Approved Costumes</NavItem>
           <NavItem href='#rejected-list'>Rejected Costumes</NavItem>
         </Navbar>
