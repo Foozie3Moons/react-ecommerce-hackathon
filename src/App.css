@@ -43,8 +43,9 @@
   padding: 1em;
 }
 
-Body {
-  background-color: rgba(0,0,0,.1);
+body {
+  background-color: rgba(0,0,0,.5);
+  height: 100%;
 }
 
 .Selection {

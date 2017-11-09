@@ -73,8 +73,8 @@ class Main extends Component {
             <Col s={1}></Col>
             <Col s={10}>
               <div class='card'>
-                <input type='text' placeholder='Search' name='searchbox' id='searchbox' />
-                <input type='button' value='Search'/>
+                <input type='text' placeholder='Search' name='searchbox' id='searchbox'/>
+                <input type='button' value='Search' onClick={this.props.handleSubmit}/>
               </div>
             </Col>
             <Col s={1}></Col>

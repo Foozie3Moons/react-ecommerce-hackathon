@@ -8,7 +8,6 @@ class Body extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      initItems: [],
       items: [{
         name: 'Batman Costume', // some sort of name we can display as a title
         imgUrl: 'https://target.scene7.com/is/image/Target/51208174?wid=520&hei=520&fmt=pjpeg', // link to the image so we can display it
@@ -72,11 +71,11 @@ class Body extends Component {
   // The props are then sent to Approved/Rejected lists, rerendering if needed
   // For that reason, state-lifting functions should live here, and be passed through Main to the Selection itself
 
-  componentDidMount = () => {
+  handleSubmit = () => {
     let items = this.state.items;
     let selectedItem = this.state.items[0];
     items.push(items.shift());
-    this.setState({initItems: this.state.items, selectedItem: selectedItem})
+    this.setState({selectedItem: selectedItem})
   }
 
   handleApproval = (item) => {
@@ -135,6 +134,7 @@ class Body extends Component {
           itemList={this.state.itemList}
           selectedItem={this.state.selectedItem}
           comparisonList={this.state.comparisonList}
+          handleSubmit={this.handleSubmit}
           />
         <Row>
           <Col s={1}></Col>
